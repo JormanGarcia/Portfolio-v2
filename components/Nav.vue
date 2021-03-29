@@ -38,7 +38,7 @@ nav {
 
 nav a{
     color: var(--highlight-color);
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 900;
     margin-bottom: 10px;
     transition: .1s;

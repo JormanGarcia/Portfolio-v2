@@ -28,14 +28,13 @@ export default {
 </script>
 
 <style>
-    header {
-        display: flex;
-        justify-content: flex-end;
-        padding: 25px 15px;
-    }
 
     .menu-container {
         -webkit-tap-highlight-color: transparent;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
     }
 
     .menu {
@@ -50,10 +49,7 @@ export default {
         flex-direction: column;
         cursor: pointer;
         transition: var(--transition-nav);
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
+
     }
 
 

@@ -23,10 +23,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Inconsolata', monospace;
+  color: var(--main-color);
 }
 
 a {
-  color: black;
+  color: var(--main-color);
   text-decoration: none;
 
 }
@@ -40,7 +41,7 @@ body {
   width: 90%;
   margin: auto;
   max-width: 1100px;
-  margin-top: 50px;
+  min-height: 100vh
 }
 
 </style>
