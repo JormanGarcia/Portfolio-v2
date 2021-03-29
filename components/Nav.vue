@@ -1,8 +1,13 @@
 <template>
-<transition name="nav" appear>
+<transition name="nav">
 
     <nav  v-if="isNavOpen" >
-        <div>Hola</div>
+        <nuxt-link to="/">Inicio</nuxt-link>
+        <nuxt-link to="/">Sobre Mí</nuxt-link>
+        <nuxt-link to="/">Portafolio</nuxt-link>
+
+
+        <p class="email">Jormanj_@outlook.com</p>
     </nav>
 
 </transition>
@@ -17,7 +22,6 @@ export default {
 <style>
 nav {
     background: var(--main-color);
-    color: var(--highlight-color);
 
     position: absolute;
     top: 0px;
@@ -25,10 +29,27 @@ nav {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    padding-right: 20px;
 
 }
+
+nav a{
+    color: var(--highlight-color);
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    transition: .1s;
+}
+
+nav a:hover {
+    color: var(--background-color);
+    text-shadow: 1px 1px 0 var(--highlight-color-dark);
+}
+
+
 
 .nav-enter-active,
 .nav-leave-active {
@@ -39,5 +60,14 @@ nav {
 .nav-enter,
 .nav-leave-to {
   transform: translateY(-100%);
+}
+
+.email {
+    color: var(--background-color);
+    font-weight: 700;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
 }
 </style>
