@@ -1,5 +1,5 @@
 <template>
-<transition name="nav">
+<transition name="nav" appear>
 
     <nav  v-if="isNavOpen" >
         <div>Hola</div>

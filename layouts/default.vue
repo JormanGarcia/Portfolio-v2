@@ -11,6 +11,7 @@
   --main-color: #2C3840;
   --background-color: #fafafa;
   --highlight-color: #50F2C4;
+  --highlight-color-dark: #17BFA0;
   --transition-nav: .3s ease;
   --menu-size: 55px;
 }

@@ -1,13 +1,16 @@
 <template>
     <header>
+        <transition name="menu" appear>
 
-        <div class="menu-container"  :class="{active: isNavOpen}" @click="isNavOpen = !isNavOpen" >
-            <div class="menu" :class="{active: isNavOpen}" >
-                <div class="line top"></div>
-                <div class="line center"></div>
-                <div class="line bottom"></div>
+            <div class="menu-container"  :class="{active: isNavOpen}" @click="isNavOpen = !isNavOpen" >
+                <div class="menu" :class="{active: isNavOpen}" >
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
             </div>
-        </div>
+
+        </transition>
 
 
         <Nav :isNavOpen="isNavOpen" />
@@ -29,6 +32,10 @@ export default {
         display: flex;
         justify-content: flex-end;
         padding: 25px 15px;
+    }
+
+    .menu-container {
+        -webkit-tap-highlight-color: transparent;
     }
 
     .menu {
@@ -78,5 +85,15 @@ export default {
 
     .menu div:last-of-type {
         margin: 0;
+    }
+
+
+    .menu-enter {
+        opacity: 0;
+        transform: translateX(-100px)
+    }
+
+    .menu-enter-active {
+        transition: .3s;
     }
 </style>
