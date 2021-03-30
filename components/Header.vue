@@ -2,7 +2,10 @@
     <header>
         <transition name="menu" appear>
 
+
             <div class="menu-container"  :class="{active: isNavOpen}" @click="isNavOpen = !isNavOpen" >
+            <div v-if="$route.name === 'index'" class="title" >Jorman Garcia</div>
+            <div v-if="$route.name === 'portafolio'" class="title" >Portafolio</div>
                 <div class="menu" :class="{active: isNavOpen}" >
                     <div class="line top"></div>
                     <div class="line center"></div>
@@ -13,7 +16,7 @@
         </transition>
 
 
-        <Nav :isNavOpen="isNavOpen" />
+        <Nav @toggleNav="isNavOpen = !isNavOpen" :isNavOpen="isNavOpen" />
     </header>
 </template>
 
@@ -32,9 +35,14 @@ export default {
     .menu-container {
         -webkit-tap-highlight-color: transparent;
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 0px;
+        right: 0px;
         z-index: 1000;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px;
     }
 
     .menu {
@@ -50,6 +58,12 @@ export default {
         cursor: pointer;
         transition: var(--transition-nav);
 
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 700;
+        opacity: .5;
     }
 
 

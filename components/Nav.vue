@@ -2,11 +2,17 @@
 <transition name="nav">
 
     <nav  v-if="isNavOpen" >
-        <nuxt-link to="/">Inicio</nuxt-link>
-        <nuxt-link to="/">Sobre Mí</nuxt-link>
-        <nuxt-link to="/">Portafolio</nuxt-link>
 
-
+        <div @click="$emit('toggleNav')">
+            <nuxt-link  to="/">Inicio</nuxt-link>
+        </div>
+        <div @click="$emit('toggleNav')">
+            <nuxt-link  to="/">Sobre mí</nuxt-link>
+        </div>
+        <div @click="$emit('toggleNav')">
+            <nuxt-link  to="/portafolio">Portafolio</nuxt-link>
+        </div>
+        
         <p class="email">Jormanj_@outlook.com</p>
     </nav>
 
@@ -33,15 +39,20 @@ nav {
     justify-content: center;
     align-items: flex-end;
     padding-right: 20px;
+    z-index: 500;
 
+}
+
+nav div {
+    margin-bottom: 20px;
 }
 
 nav a{
     color: var(--highlight-color);
     font-size: 35px;
     font-weight: 900;
-    margin-bottom: 10px;
     transition: .1s;
+    z-index: 0;
 }
 
 nav a:hover {

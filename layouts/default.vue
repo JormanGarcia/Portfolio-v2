@@ -14,7 +14,7 @@
   --background-color: #fafafa;
   --highlight-color: #50F2C4;
   --highlight-color-dark: #17BFA0;
-  --transition-nav: .3s ease;
+  --transition-nav: .2s ease;
   --menu-size: 55px;
 }
 
@@ -42,6 +42,17 @@ body {
   margin: auto;
   max-width: 1100px;
   min-height: 100vh
+}
+
+.page-enter-active, .page-leave-active {
+  transition: .2s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
+
+.page-enter {
+  transform: scale(.95);
 }
 
 </style>

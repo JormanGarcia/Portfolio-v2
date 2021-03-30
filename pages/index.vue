@@ -4,7 +4,7 @@
       Jorman Garcia
     </div>
 
-    <p>Desarrollador Web orientado al <span>Front End</span></p>
+    <p>Desarrollador Web <span>Front End</span></p>
 
     <nuxt-link to="/portafolio">Portafolio</nuxt-link>
   </div>
@@ -20,6 +20,7 @@ export default {
   .helloWorld {
     font-size: 35px;
     font-weight: 900;
+    margin-bottom: 10px;
   }
 
   .helloWorld span {
@@ -31,29 +32,33 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
-
+  .hero p{
+    margin-bottom: 30px;
+  }
   .hero a {
     border: 3px solid var(--main-color);
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 900;
+    animation: rotate 10s infinite linear;
+    font-size: 12px;
     transition: .2s ease;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    transform: rotate(-20deg)
   }
 
   .hero a:hover {
-    width: 110px;
-    height: 110px;
-    transform: rotate(0deg) scale(.9);
     background: var(--main-color);
     color: var(--highlight-color);
+
+  }
+
+  @keyframes rotate {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
   }
 </style>
